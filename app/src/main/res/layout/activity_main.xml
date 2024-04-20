@@ -2,95 +2,96 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+    android:id="@+id/main_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#eae0d6"
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/txt_overview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Overview"
-         android:layout_centerHorizontal="true"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="15dp"
-        android:textSize="20dp"
+        android:textSize="20sp"
         android:fontFamily="@font/playfair2"
         />
+
     <TextView
-        android:id="@+id/txtAccounts"
+        android:id="@+id/txt_accounts"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/playfair2"
         android:padding="10dp"
         android:text="Accounts"
-        android:textSize="25sp" android:layout_marginTop="25dp"/>
+        android:textSize="25sp"
+        android:layout_below="@id/txt_overview"
+        android:layout_marginTop="25dp"/>
 
     <TextView
-        android:id="@+id/textDebit"
+        android:id="@+id/txt_debit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
         android:layout_marginStart="15dp"
         android:fontFamily="@font/playfair"
         android:text="Debit (Savings)"
-        android:layout_below="@+id/txtAccounts"
-
+        android:layout_below="@+id/txt_accounts"
         />
 
     <TextView
-        android:id="@+id/txtSample1"
+        android:id="@+id/txt_sample1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Sample"
         android:layout_alignParentRight="true"
-        android:layout_alignRight="@+id/textDebit"
+        android:layout_below="@+id/txt_debit"
         android:layout_marginEnd="35dp"
-        android:layout_marginTop="81dp"
         android:fontFamily="@font/playfair"
         />
 
     <TextView
-        android:id="@+id/txtCash"
+        android:id="@+id/txt_cash"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Cash"
-        android:layout_below="@id/textDebit"
+        android:layout_below="@id/txt_debit"
         android:layout_marginLeft="15dp"
         android:layout_marginTop="10dp"
         android:fontFamily="@font/playfair"
         />
 
     <TextView
-        android:id="@+id/txtSample2"
+        android:id="@+id/txt_sample2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Sample"
-        android:layout_below="@id/txtSample1"
+        android:layout_below="@id/txt_sample1"
         android:layout_alignParentRight="true"
         android:layout_marginRight="35dp"
         android:layout_marginTop="10dp"
         android:fontFamily="@font/playfair"
         />
-s
-        <TextView
-            android:id="@+id/txtBudget"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="BUDGETS"
-            android:layout_below="@id/txtCash"
-            android:layout_marginTop="50dp"
-            android:layout_marginLeft="15dp"
-            android:fontFamily="@font/playfair2"
-            />
 
     <TextView
-        android:id="@+id/txtMonth"
+        android:id="@+id/txt_budget"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="BUDGETS"
+        android:layout_below="@id/txt_cash"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="15dp"
+        android:fontFamily="@font/playfair2"
+        />
+
+    <TextView
+        android:id="@+id/txt_month"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Month"
-        android:layout_toRightOf="@id/txtBudget"
-        android:layout_below="@id/txtCash"
+        android:layout_toRightOf="@id/txt_budget"
+        android:layout_below="@id/txt_cash"
         android:layout_marginTop="53dp"
         android:layout_marginLeft="15dp"
         android:textSize="10dp"
@@ -99,91 +100,89 @@ s
         />
 
     <ProgressBar
-        android:id="@+id/progress"
+        android:id="@+id/progress_budget"
         style="@android:style/Widget.Holo.Light.ProgressBar.Horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/txtMonth"
+        android:layout_below="@id/txt_month"
         android:paddingStart="15dp"
         android:paddingEnd="15dp"
         android:layout_marginTop="10dp"
         />
 
-        <TextView
-            android:id="@+id/txtToday"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="TODAY"
-            android:layout_below="@id/progress"
-            android:layout_alignParentRight="true"
-            android:layout_marginEnd="25dp"
-            />
-
+    <TextView
+        android:id="@+id/txt_today"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TODAY"
+        android:layout_below="@id/progress_budget"
+        android:layout_alignParentRight="true"
+        android:layout_marginEnd="25dp"
+        />
 
     <TextView
-        android:id="@+id/txtCashFlow"
+        android:id="@+id/txt_cash_flow"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="CASH FLOW"
-        android:layout_below="@id/txtToday"
+        android:layout_below="@id/txt_today"
         android:layout_marginTop="15dp"
         android:layout_marginStart="10dp"
         />
 
     <ProgressBar
-        android:id="@+id/progress2"
+        android:id="@+id/progress_cash_in"
         style="@android:style/Widget.Holo.Light.ProgressBar.Horizontal"
         android:layout_width="120dp"
         android:layout_height="wrap_content"
-        android:layout_below="@id/txtCashFlow"
+        android:layout_below="@id/txt_cash_flow"
         android:paddingStart="15dp"
         android:paddingEnd="15dp"
         android:layout_marginTop="10dp"
         />
 
     <ProgressBar
-        android:id="@+id/progress3"
+        android:id="@+id/progress_cash_out"
         style="@android:style/Widget.Holo.Light.ProgressBar.Horizontal"
         android:layout_width="120dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/progress2"
+        android:layout_below="@id/progress_cash_in"
         android:paddingStart="15dp"
         android:paddingEnd="15dp"
         android:layout_marginTop="10dp"
         />
 
     <TextView
-        android:id="@+id/txtEarned"
+        android:id="@+id/txt_earned"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="$$ Earned"
-        android:layout_toRightOf="@+id/progress2"
-        android:layout_marginTop="285dp"
+        android:layout_toRightOf="@id/progress_cash_in"
+        android:layout_below="@id/txt_today"
+        android:layout_marginTop="40dp"
         android:fontFamily="@font/playfair2"
         />
 
     <TextView
-    android:id="@+id/txtSpent"
+        android:id="@+id/txt_spent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="$$ Spent"
-        android:layout_below="@+id/txtEarned"
-        android:layout_toRightOf="@id/progress3"
+        android:layout_below="@id/txt_earned"
+        android:layout_toRightOf="@id/progress_cash_out"
         android:layout_marginTop="5dp"
         android:fontFamily="@font/playfair2"
         />
 
     <TextView
-        android:id="@+id/txtTotal"
+        android:id="@+id/txt_total"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Total $$"
-        android:layout_alignRight="@id/txtToday"
-        android:layout_below="@id/txtToday"
+        android:layout_alignRight="@id/txt_today"
+        android:layout_below="@id/txt_today"
         android:layout_marginTop="50dp"
         android:fontFamily="@font/playfair2"
         />
-
-
 
 </RelativeLayout>
