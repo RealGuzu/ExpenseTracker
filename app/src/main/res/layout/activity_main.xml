@@ -163,13 +163,24 @@ s
         />
 
     <TextView
-        android:id="@id+/txtSpent"
+    android:id="@+id/txtSpent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="$$ Spent"
         android:layout_below="@+id/txtEarned"
         android:layout_toRightOf="@id/progress3"
         android:layout_marginTop="5dp"
+        android:fontFamily="@font/playfair2"
+        />
+
+    <TextView
+        android:id="@+id/txtTotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Total $$"
+        android:layout_alignRight="@id/txtToday"
+        android:layout_below="@id/txtToday"
+        android:layout_marginTop="50dp"
         android:fontFamily="@font/playfair2"
         />
 
