@@ -39,6 +39,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
+        android:layout_marginTop="25dp"
         android:fontFamily="@font/playfair"
         android:text="Debit (Savings)"
         android:layout_below="@+id/txt_accounts"
@@ -50,7 +51,7 @@
         android:layout_height="wrap_content"
         android:text="Sample"
         android:layout_alignParentRight="true"
-        android:layout_below="@+id/txt_debit"
+        android:layout_above="@id/txt_cash"
         android:layout_marginEnd="35dp"
         android:fontFamily="@font/playfair"
         />
@@ -193,14 +194,12 @@
         android:layout_marginTop="50dp"
         android:fontFamily="@font/playfair2"
         />
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/frame_layout"/>
+
 
 
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabAdd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/white"

@@ -1,19 +1,27 @@
 package com.example.expensetracker;
 
+import android.content.Intent;
 import android.os.Bundle;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class MainActivity extends AppCompatActivity {
+
+    FloatingActionButton fab;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        fab = findViewById(R.id.fabAdd);
 
+        fab.setOnClickListener(v -> openAddExpense());
+    }
+
+    private void openAddExpense() {
+        Intent intent = new Intent(this, add_expense.class);
+        startActivity(intent);
     }
 }
