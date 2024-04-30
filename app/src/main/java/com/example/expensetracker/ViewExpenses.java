@@ -7,6 +7,7 @@ import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
@@ -28,13 +29,15 @@ public class ViewExpenses extends AppCompatActivity {
     List<DataClass> dataList;
     DatabaseReference databaseReference;
     ValueEventListener eventListener;
+    SearchView searchView;
+    MyAdapter adapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_expenses);
 
         recyclerView = findViewById(R.id.recyclerView);
-
+        searchView = findViewById(R.id.search);
         GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 1);
         recyclerView.setLayoutManager(gridLayoutManager);
 
@@ -65,10 +68,30 @@ public class ViewExpenses extends AppCompatActivity {
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-
+                dialog.dismiss();
             }
-        })
+        });
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
 
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                searchList(newText);
+                return  true;
+             }
+        });
 
+    }
+    public void searchList(String text){
+        ArrayList<DataClass> searchList = new ArrayList<>();
+        for (DataClass dataClass: dataList){
+            if(dataClass.getTitle().toLowerCase().contains(text.toLowerCase())){
+                searchList.add(dataClass);
+            }
+        }
+        adapter.searchDataList(searchList);
     }
 }
