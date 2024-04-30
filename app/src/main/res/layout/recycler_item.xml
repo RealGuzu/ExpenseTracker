@@ -43,7 +43,7 @@
             android:fontFamily="@font/playfair2"/>
 
         <TextView
-            android:id="@+id/recDesc"
+            android:id="@+id/recCategory"
             android:layout_width="140dp"
             android:layout_height="wrap_content"
             android:layout_below="@id/recTitle"
@@ -59,7 +59,7 @@
             android:fontFamily="@font/playfair2"/>
 
         <TextView
-            android:id="@+id/recCategory"
+            android:id="@+id/recDesc"
             android:layout_width="140dp"
             android:layout_height="wrap_content"
             android:layout_below="@id/recTitle"
