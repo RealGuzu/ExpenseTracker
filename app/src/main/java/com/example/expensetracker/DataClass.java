@@ -7,7 +7,9 @@ public class DataClass {
     public String category;
 
     // Empty constructor needed for Firebase
-    public DataClass() {}
+    public DataClass() {
+
+    }
 
     public DataClass(String title, String amount, String description, String category) {
         this.title = title;
