@@ -1,6 +1,7 @@
 package com.example.expensetracker;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,8 +10,6 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
-
-import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,14 +30,25 @@ public class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
                 return new MyViewHolder(view);
             }
 
-        @Override
-        public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
+    @Override
+    public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
+        DataClass data = dataList.get(position);
+        holder.recTitle.setText(data.getTitle());
+        holder.recDesc.setText(data.getDescription());
+        holder.recCategory.setText(data.getCategory());
+        holder.recAmount.setText("$" + data.getAmount()); // Concatenate dollar sign with amount
 
-            holder.recTitle.setText(dataList.get(position).title);
-            holder.recDesc.setText(dataList.get(position).description);
-            holder.recCategory.setText(dataList.get(position).category);
-            holder.recAmount.setText(dataList.get(position).amount);
-        }
+        holder.recCard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(context, ViewExpenses.class);
+
+                intent.putExtra("Key",dataList.get(holder.getAdapterPosition()).getKey());
+
+                context.startActivity(intent);
+            }
+        });
+    }
 
         @Override
         public int getItemCount() {

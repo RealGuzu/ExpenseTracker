@@ -5,6 +5,10 @@ public class DataClass {
     public String amount;
     public String description;
 
+
+
+    private String key;
+
     public String getKey() {
         return key;
     }
@@ -13,7 +17,6 @@ public class DataClass {
         this.key = key;
     }
 
-    private String key;
 
     public String getTitle() {
         return title;

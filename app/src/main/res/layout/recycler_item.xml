@@ -1,79 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/recCard"
-    android:layout_marginStart="12dp"
-    android:layout_marginEnd="12dp"
-    android:layout_marginHorizontal="10dp"
-    android:layout_marginVertical="10dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/default_margin"
+    android:layout_marginEnd="@dimen/default_margin"
+    android:layout_marginHorizontal="@dimen/default_margin"
+    android:layout_marginVertical="@dimen/default_margin"
     app:cardCornerRadius="20dp"
     app:cardElevation="8dp">
 
-    <RelativeLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-
-
+        <!-- Title -->
         <TextView
+            android:id="@+id/recTitle"
             android:layout_width="120dp"
             android:layout_height="30dp"
-            android:id="@+id/recTitle"
             android:text="Title"
             android:textColor="@color/black"
-            android:textSize="20sp"
-            android:layout_marginTop="20dp"
-            android:layout_marginStart="20dp"
+            android:textSize="@dimen/title_text_size"
+            android:layout_marginTop="@dimen/default_margin"
+            android:layout_marginStart="@dimen/default_margin"
             android:fontFamily="@font/playfair2"
-            />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
+        <!-- Amount -->
         <TextView
             android:id="@+id/recAmount"
             android:layout_width="80dp"
             android:layout_height="30dp"
-            android:layout_marginStart="156dp"
-            android:layout_marginTop="20dp"
-            android:layout_toEndOf="@id/recTitle"
             android:text="Amount"
             android:textAlignment="center"
             android:textColor="@color/black"
-            android:textSize="16sp"
-            android:fontFamily="@font/playfair2"/>
+            android:textSize="@dimen/amount_text_size"
+            android:layout_marginStart="@dimen/default_margin"
+            android:layout_marginTop="@dimen/default_margin"
+            app:layout_constraintStart_toEndOf="@id/recTitle"
+            app:layout_constraintTop_toTopOf="parent" />
 
+        <!-- Category -->
         <TextView
             android:id="@+id/recCategory"
             android:layout_width="140dp"
             android:layout_height="wrap_content"
-            android:layout_below="@id/recTitle"
-            android:layout_marginStart="124dp"
-            android:layout_marginTop="2dp"
-            android:layout_marginBottom="12dp"
-            android:layout_toEndOf="@id/recTitle"
-            android:maxLines="1"
             android:text="Category"
             android:textColor="@color/black"
-            android:textSize="14sp"
-            android:gravity="center"
-            android:fontFamily="@font/playfair2"/>
+            android:textSize="@dimen/category_text_size"
+            android:maxLines="1"
+            android:layout_marginStart="@dimen/default_margin"
+            android:layout_marginTop="@dimen/default_margin"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/recTitle" />
 
+        <!-- Description -->
         <TextView
             android:id="@+id/recDesc"
             android:layout_width="140dp"
             android:layout_height="wrap_content"
-            android:layout_below="@id/recTitle"
-            android:layout_marginStart="-119dp"
-            android:layout_marginTop="4dp"
-            android:layout_marginBottom="12dp"
-            android:layout_toEndOf="@id/recTitle"
-            android:maxLines="1"
-            android:text="desc"
+            android:text="Description"
             android:textColor="@color/black"
-            android:textSize="14sp"
-            android:fontFamily="@font/playfair2"
-            />
+            android:textSize="@dimen/description_text_size"
+            android:maxLines="1"
+            android:layout_marginStart="@dimen/default_margin"
+            android:layout_marginTop="@dimen/default_margin"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/recCategory" />
 
-    </RelativeLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.cardview.widget.CardView>

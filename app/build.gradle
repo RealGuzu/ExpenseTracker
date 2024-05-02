@@ -42,4 +42,5 @@ dependencies {
     implementation libs.glide
     annotationProcessor libs.compiler
     implementation 'com.github.clans:fab:1.6.4'
+    implementation 'com.google.code.gson:gson:2.8.9'
 }
