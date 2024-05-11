@@ -9,76 +9,74 @@
     tools:context=".add_expense"
     tools:ignore="HardcodedText">
 
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/txtAddTitle"
+    <TextView
+        android:id="@+id/txtEditTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="70dp"
         android:fontFamily="@font/playfair2"
         android:shadowColor="@color/text_shadow"
         android:shadowDx="1"
         android:shadowDy="1"
         android:shadowRadius="2"
-        android:text="Add Expense"
+        android:text="Update Expense"
         android:textSize="50dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.554"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/editExpenseName"
+    <EditText
+        android:id="@+id/updateExpenseName"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
         android:layout_marginStart="25dp"
+        android:layout_marginTop="336dp"
         android:layout_marginEnd="25dp"
-        android:layout_marginBottom="24dp"
         android:hint="Expense Name"
-        app:layout_constraintBottom_toTopOf="@+id/editTextAmount"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="26dp"
+        app:layout_constraintBottom_toTopOf="@+id/updateTextAmount"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/editTextAmount"
+    <EditText
+        android:id="@+id/updateTextAmount"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="25dp"
-        android:layout_marginTop="352dp"
+        android:layout_marginTop="336dp"
         android:layout_marginEnd="25dp"
         android:hint="Amount"
         android:inputType="numberDecimal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/editDescription"
+    <EditText
+        android:id="@+id/updateDescription"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="25dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="26dp"
         android:layout_marginEnd="25dp"
         android:hint="Description"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextAmount" />
+        app:layout_constraintTop_toBottomOf="@+id/updateTextAmount" />
 
     <Spinner
-        android:id="@+id/spinnerCategory"
+        android:id="@+id/updatespinnerCategory"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="26dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editDescription" />
+        app:layout_constraintTop_toBottomOf="@+id/updateDescription" />
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnUpdate"
+    <Button
+        android:id="@+id/btnSubmitUpdate"
         android:layout_width="120dp"
         android:layout_height="60dp"
         android:layout_marginBottom="152dp"
@@ -87,5 +85,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

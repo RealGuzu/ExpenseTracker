@@ -36,7 +36,9 @@ public class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
         holder.recTitle.setText(data.getTitle());
         holder.recDesc.setText(data.getDescription());
         holder.recCategory.setText(data.getCategory());
-        holder.recAmount.setText("$" + data.getAmount()); // Concatenate dollar sign with amount
+        holder.recAmount.setText("$" + data.getAmount());
+
+        // Concatenate dollar sign with amount
 
         holder.recCard.setOnClickListener(new View.OnClickListener() {
             @Override

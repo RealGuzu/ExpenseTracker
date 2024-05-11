@@ -1,6 +1,7 @@
 package com.example.expensetracker;
 
 import android.app.AlertDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -34,6 +35,7 @@ public class ViewExpenses extends AppCompatActivity {
     private MyAdapter adapter;
     private String key = "";
 
+
     String deletedExpense = null;
 
     private FloatingActionButton deleteButton;
@@ -61,11 +63,22 @@ public class ViewExpenses extends AppCompatActivity {
         });
     }
 
+
+
+
+    private void openEdit() {
+        Intent inent = new Intent(this, update_activity.class);
+        startActivity(inent);
+    }
+
     private void initViews() {
         recyclerView = findViewById(R.id.recyclerView);
         searchView = findViewById(R.id.search);
         deleteButton = findViewById(R.id.deleteButton);
+
+
     }
+
 
     private void setupRecyclerView() {
         GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 1);

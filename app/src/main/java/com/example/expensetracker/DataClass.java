@@ -9,6 +9,9 @@ public class DataClass {
 
     private String key;
 
+    public DataClass(String amount, String title, String description, int category) {
+    }
+
     public String getKey() {
         return key;
     }

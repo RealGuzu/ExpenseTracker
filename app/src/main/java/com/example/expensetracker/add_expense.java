@@ -19,7 +19,9 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.text.DateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 
 public class add_expense extends AppCompatActivity {
 
@@ -93,7 +95,10 @@ public class add_expense extends AppCompatActivity {
 
         DataClass dataClass = new DataClass(title, amount, description, category);
 
-        FirebaseDatabase.getInstance().getReference("Expense Tracker").child(title)
+        String currentDate = DateFormat.getDateTimeInstance().format(Calendar.getInstance().getTime());
+
+
+        FirebaseDatabase.getInstance().getReference("Expense Tracker").child    (currentDate)
                 .setValue(dataClass)
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
