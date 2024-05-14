@@ -2,6 +2,7 @@ package com.example.expensetracker;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -21,11 +22,13 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.ArrayList;
+
 public class update_activity extends AppCompatActivity {
 
     Button updateButton;
     EditText upAmount, upTitle, upDesc;
-    Spinner spinner;
+    Spinner categorySpinner;
 
     String key;
     DatabaseReference databaseReference;
@@ -37,15 +40,17 @@ public class update_activity extends AppCompatActivity {
 
         initViews();
 
+
     }
 
     private void initViews() {
         upAmount = findViewById(R.id.updateTextAmount);
         upTitle = findViewById(R.id.updateExpenseName);
         upDesc = findViewById(R.id.updateDescription);
-        spinner = findViewById(R.id.updatespinnerCategory);
-        updateButton = findViewById(R.id.btnUpdate);
+        categorySpinner = findViewById(R.id.updatespinnerCategory);
+        setupSpinner();
 
+        updateButton = findViewById(R.id.btnSubmitUpdate);
         ActivityResultLauncher<Intent> activityResultLauncher = registerForActivityResult(
                 new ActivityResultContracts.StartActivityForResult(),
                 new ActivityResultCallback<ActivityResult>() {
@@ -61,7 +66,7 @@ public class update_activity extends AppCompatActivity {
             upAmount.setText(bundle.getString("amount"));
             upTitle.setText(bundle.getString("title"));
             upDesc.setText(bundle.getString("description"));
-            spinner.setSelection(bundle.getInt("category"));
+            categorySpinner.setSelection(bundle.getInt("category"));
         }
         databaseReference = FirebaseDatabase.getInstance().getReference("Expense Tracker");
 
@@ -72,7 +77,7 @@ public class update_activity extends AppCompatActivity {
     }
 
     private void saveData() {
-        Intent intent = new Intent(update_activity.this, MainActivity.class);
+        Intent intent = new Intent(update_activity.this, ViewExpenses.class);
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setCancelable(false);
         builder.setView(R.layout.progress_layout);
@@ -85,15 +90,17 @@ public class update_activity extends AppCompatActivity {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
 
-    public void updateData() {
-        String amount = upAmount.getText().toString().trim();
-        String title = upTitle.getText().toString().trim();
-        String description = upDesc.getText().toString().trim();
-        int category = spinner.getSelectedItemPosition();
+    public void updateData(){
+        String amount = upAmount.getText().toString();
+        String title = upTitle.getText().toString();
+        String description = upDesc.getText().toString();
+        int category = categorySpinner.getSelectedItemPosition();
 
 
         DataClass dataClass = new DataClass(amount, title, description, category);
-        databaseReference.setValue(dataClass).addOnCompleteListener(new OnCompleteListener<Void>() {
+
+        databaseReference = FirebaseDatabase.getInstance().getReference("Expense Tracker").child(key);
+        databaseReference.child(key).setValue(dataClass).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 showToast("Updated");
@@ -104,7 +111,29 @@ public class update_activity extends AppCompatActivity {
             public void onFailure(@NonNull Exception e) {
                 showToast(e.getMessage());
             }
-
         });
+    }
+    private void setupSpinner() {
+        ArrayList<String> categories = new ArrayList<>();
+        categories.add("Select Category");
+        categories.add("Food and Groceries");
+        categories.add("Housing");
+        categories.add("Transportation");
+        categories.add("Utilities");
+        categories.add("Healthcare");
+        categories.add("Personal Care");
+        categories.add("Entertainment");
+        categories.add("Debts");
+        categories.add("Education");
+        categories.add("Savings");
+        categories.add("Gifts and Donations");
+        categories.add("Travel");
+        categories.add("Insurance");
+        categories.add("Miscellaneous");
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, categories);
+        adapter.setDropDownViewResource(android.R.layout.select_dialog_singlechoice);
+
+        categorySpinner.setAdapter(adapter);
     }
 }

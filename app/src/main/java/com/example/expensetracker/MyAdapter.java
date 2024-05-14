@@ -43,7 +43,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
         holder.recCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(context, ViewExpenses.class);
+                Intent intent = new Intent(context, update_activity.class);
 
                 intent.putExtra("Key",dataList.get(holder.getAdapterPosition()).getKey());
 
@@ -75,8 +75,6 @@ class   MyViewHolder extends  RecyclerView.ViewHolder{
         recTitle = itemView.findViewById(R.id.recTitle);
         recAmount = itemView.findViewById(R.id.recAmount);
         recCategory = itemView.findViewById(R.id.recCategory);
-
-
 
     }
 }

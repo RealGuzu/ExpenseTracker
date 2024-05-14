@@ -47,6 +47,8 @@ public class add_expense extends AppCompatActivity {
         amountEditText = findViewById(R.id.editTextAmount);
         titleEditText = findViewById(R.id.editExpenseName);
         descriptionEditText = findViewById(R.id.editDescription);
+
+
     }
 
     private void setupSpinner() {
@@ -83,7 +85,10 @@ public class add_expense extends AppCompatActivity {
     }
 
     private void openHome() {
+        String amount = amountEditText.getText().toString();
+
         Intent intent = new Intent(this, MainActivity.class);
+        intent.putExtra("amount", amount);
         startActivity(intent);
     }
 
@@ -92,7 +97,6 @@ public class add_expense extends AppCompatActivity {
         String amount = amountEditText.getText().toString();
         String description = descriptionEditText.getText().toString();
         String category = categorySpinner.getSelectedItem().toString();
-
         DataClass dataClass = new DataClass(title, amount, description, category);
 
         String currentDate = DateFormat.getDateTimeInstance().format(Calendar.getInstance().getTime());
