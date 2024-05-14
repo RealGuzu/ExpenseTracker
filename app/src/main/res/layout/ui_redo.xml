@@ -34,11 +34,11 @@
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="4dp"
         android:text="Total Balance"
-        app:layout_constraintBottom_toTopOf="@+id/textView3"
-        app:layout_constraintEnd_toEndOf="@+id/textView3" />
+        app:layout_constraintBottom_toTopOf="@+id/txt_total"
+        app:layout_constraintEnd_toEndOf="@+id/txt_total" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/txt_total"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="17dp"
@@ -86,14 +86,14 @@
                 android:layout_marginEnd="52dp"
                 android:text="Expense"
                 android:textSize="10sp"
-                app:layout_constraintBottom_toTopOf="@+id/textView11"
+                app:layout_constraintBottom_toTopOf="@+id/txtExpenseTotal"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/imageView2"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_chainStyle="packed" />
 
             <TextView
-                android:id="@+id/textView11"
+                android:id="@+id/txtExpenseTotal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="J$0.00"
@@ -121,7 +121,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/cardView"
-        app:layout_constraintTop_toBottomOf="@+id/textView3"
+        app:layout_constraintTop_toBottomOf="@+id/txt_total"
         app:layout_constraintVertical_bias="1.0">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -138,12 +138,12 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="11dp"
                 android:src="@drawable/arrow_down"
-                app:layout_constraintEnd_toStartOf="@+id/textView9"
+                app:layout_constraintEnd_toStartOf="@+id/txtIncomeTotal"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/textView9"
+                android:id="@+id/txtIncomeTotal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="9dp"
@@ -165,10 +165,10 @@
                 android:text="J$0.00"
                 android:textSize="15sp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="@+id/textView9"
+                app:layout_constraintEnd_toEndOf="@+id/txtIncomeTotal"
                 app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/textView9"
-                app:layout_constraintTop_toBottomOf="@+id/textView9" />
+                app:layout_constraintStart_toStartOf="@+id/txtIncomeTotal"
+                app:layout_constraintTop_toBottomOf="@+id/txtIncomeTotal"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -183,11 +183,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3"
+        app:layout_constraintTop_toBottomOf="@+id/txt_total"
         app:layout_constraintVertical_bias="0.992">
 
         <TextView
-            android:id="@+id/textView4"
+            android:id="@+id/txt_transactions"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -197,7 +197,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textView5"
+            android:id="@+id/txtViewAll"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -208,7 +208,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerView2"
+            android:id="@+id/preview_list"
             android:layout_width="match_parent"
             android:layout_height="557dp"
             android:layout_marginTop="16dp"
@@ -217,8 +217,23 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/textView4"
+            app:layout_constraintTop_toTopOf="@+id/txt_transactions"
             app:layout_constraintVertical_bias="0.0" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_marginBottom="16dp"
+            android:src="@drawable/fab_add"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:shapeAppearanceOverlay="@style/fab_3_rounded"
+            android:backgroundTint="#eae0d6"
+            />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

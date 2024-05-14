@@ -4,10 +4,11 @@
     <font
         android:fontStyle="normal"
         android:fontWeight="400"
-        android:font="@font/RadioCanada"
+        android:font="@font/radiocanada"
         tools:ignore="ResourceCycle" />
     <font
         android:fontStyle="italic"
         android:fontWeight="400"
-        android:font="@font/RadioCanada" />
+        android:font="@font/radiocanada"
+        tools:ignore="ResourceCycle" />
 </font-family>

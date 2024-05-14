@@ -34,8 +34,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         DataClass data = dataList.get(position);
         holder.recTitle.setText(data.getTitle());
-        holder.recDesc.setText(data.getDescription());
-        holder.recCategory.setText(data.getCategory());
+//        holder.recDesc.setText(data.getDescription());
+//        holder.recCategory.setText(data.getCategory());
         holder.recAmount.setText("$" + data.getAmount());
 
         // Concatenate dollar sign with amount
@@ -71,10 +71,10 @@ class   MyViewHolder extends  RecyclerView.ViewHolder{
     public MyViewHolder(@NonNull View itemView){
         super(itemView);
         recCard = itemView.findViewById(R.id.recCard);
-        recDesc = itemView.findViewById(R.id.recDesc);
+//        recDesc = itemView.findViewById(R.id.recDesc);
         recTitle = itemView.findViewById(R.id.recTitle);
         recAmount = itemView.findViewById(R.id.recAmount);
-        recCategory = itemView.findViewById(R.id.recCategory);
+//        recCategory = itemView.findViewById(R.id.recCategory);
 
     }
 }
