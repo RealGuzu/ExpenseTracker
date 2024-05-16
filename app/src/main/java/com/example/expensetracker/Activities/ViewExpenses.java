@@ -1,4 +1,4 @@
-package com.example.expensetracker;
+package com.example.expensetracker.Activities;
 
 import android.app.AlertDialog;
 import android.content.Intent;
@@ -12,6 +12,9 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.expensetracker.Utilities.DataClass;
+import com.example.expensetracker.Utilities.MyAdapter;
+import com.example.expensetracker.R;
 import com.github.clans.fab.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.database.DataSnapshot;
@@ -66,10 +69,7 @@ public class ViewExpenses extends AppCompatActivity {
 
 
 
-    private void openEdit() {
-        Intent inent = new Intent(this, update_activity.class);
-        startActivity(inent);
-    }
+
 
     private void initViews() {
         recyclerView = findViewById(R.id.recyclerView);

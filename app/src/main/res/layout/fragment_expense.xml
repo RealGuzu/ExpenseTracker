@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Fragments.expense">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout"
+            android:layout_width="400sp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="15dp"
+
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/expenseAmount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/baseline_attach_money_24"
+                android:hint="Amount"
+                android:inputType="number|numberDecimal" />
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <Spinner
+            android:id="@+id/selectCategory"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="2dp"
+            android:layout_below="@id/spinCategory"
+            />
+
+        <TextView
+            android:id="@+id/spinCategory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="19dp"
+            android:layout_marginBottom="2dp"
+            android:text="Category"
+            android:layout_below="@id/textInputLayout"
+             />
+
+        <TextView
+            android:id="@+id/txtPaymentMethod"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/selectCategory"
+            android:layout_marginTop="15dp"
+            android:text="Payment Method"
+            android:layout_marginStart="16dp"
+
+            />
+
+                <Spinner
+            android:id="@+id/spinMethod"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="4dp"
+                    android:layout_below="@id/txtPaymentMethod"
+            />
+
+        <TextView
+            android:id="@+id/displayCategory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="180dp"
+            android:layout_marginTop="56dp"
+            android:layout_marginEnd="22dp"
+            android:text="Display Category"
+            android:layout_toRightOf="@id/selectCategory"
+            android:layout_below="@id/textInputLayout"
+             />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/displayCategory"
+            android:layout_marginStart="180dp"
+            android:layout_marginLeft="160dp"
+            android:layout_marginTop="45dp"
+            android:layout_marginEnd="22dp"
+            android:layout_toRightOf="@id/spinMethod"
+
+            android:text="Display Method" />
+
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/expenseDesc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="537dp"
+            android:drawableStart="@drawable/baseline_attach_money_24"
+            android:hint="Description"
+            android:inputType="text"
+            android:layout_below="@+id/txtPaymentMethod"
+            android:layout_marginTop="60dp"
+            />
+
+    </RelativeLayout>
+
+</FrameLayout>

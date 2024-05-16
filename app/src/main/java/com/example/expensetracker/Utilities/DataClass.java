@@ -1,4 +1,4 @@
-package com.example.expensetracker;
+package com.example.expensetracker.Utilities;
 
 public class DataClass {
     public String title;

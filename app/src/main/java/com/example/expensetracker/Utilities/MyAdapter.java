@@ -1,4 +1,4 @@
-package com.example.expensetracker;
+package com.example.expensetracker.Utilities;
 
 import android.content.Context;
 import android.content.Intent;
@@ -10,6 +10,10 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.expensetracker.Activities.DetailedView;
+import com.example.expensetracker.Activities.update_activity;
+import com.example.expensetracker.R;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -43,7 +47,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
         holder.recCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(context, update_activity.class);
+                Intent intent = new Intent(context, DetailedView.class);
 
                 intent.putExtra("Key",dataList.get(holder.getAdapterPosition()).getKey());
 

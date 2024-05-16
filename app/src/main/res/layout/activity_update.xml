@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#eae0d6"
-    tools:context=".add_expense"
+    tools:context=".Activities.add_expense"
     tools:ignore="HardcodedText">
 
     <TextView

@@ -1,10 +1,9 @@
-package com.example.expensetracker;
+package com.example.expensetracker.Activities;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -14,6 +13,8 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.expensetracker.Utilities.DataClass;
+import com.example.expensetracker.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
@@ -57,7 +58,7 @@ public class add_expense extends AppCompatActivity {
         categories.add("Food and Groceries");
         categories.add("Housing");
         categories.add("Transportation");
-        categories.add("Utilities");
+        categories.add("com/example/expensetracker/Utilities");
         categories.add("Healthcare");
         categories.add("Personal Care");
         categories.add("Entertainment");
