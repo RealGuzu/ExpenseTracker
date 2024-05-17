@@ -98,20 +98,29 @@
 
             android:text="Display Method" />
 
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/expenseDesc"
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="15dp"
-            android:layout_marginEnd="15dp"
-            android:layout_marginBottom="537dp"
-            android:drawableStart="@drawable/baseline_attach_money_24"
-            android:hint="Description"
-            android:inputType="text"
             android:layout_below="@+id/txtPaymentMethod"
             android:layout_marginTop="60dp"
-            />
+            android:layout_marginEnd="15dp"
+
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/expenseDesc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txtPaymentMethod"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="60dp"
+                android:layout_marginEnd="15dp"
+                android:drawableStart="@drawable/baseline_notes_24"
+                android:hint="Description"
+                android:inputType="text"
+                android:minHeight="48dp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
 
     </RelativeLayout>
 

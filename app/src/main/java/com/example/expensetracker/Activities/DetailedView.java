@@ -1,6 +1,9 @@
 package com.example.expensetracker.Activities;
 
 import android.os.Bundle;
+import android.view.View;
+import android.view.WindowManager;
+import android.widget.Button;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,6 +22,8 @@ public class DetailedView extends AppCompatActivity {
     ViewPager2 viewPager2;
     MyViewPager myViewPager;
 
+    Button btnBack;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,7 +34,16 @@ public class DetailedView extends AppCompatActivity {
 
         myViewPager = new MyViewPager(this);
         viewPager2.setAdapter(myViewPager);
+        btnBack = findViewById(R.id.btnBack);
 
+        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
+
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
+            }
+        });
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {

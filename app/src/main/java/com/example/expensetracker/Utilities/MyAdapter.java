@@ -69,7 +69,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
 }
 
 
-class   MyViewHolder extends  RecyclerView.ViewHolder{
+class
+MyViewHolder extends  RecyclerView.ViewHolder{
     TextView recTitle,recDesc,recAmount,recCategory;
     CardView recCard;
     public MyViewHolder(@NonNull View itemView){
