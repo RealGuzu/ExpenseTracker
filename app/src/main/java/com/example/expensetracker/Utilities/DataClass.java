@@ -4,12 +4,20 @@ public class DataClass {
     public String title;
     public String amount;
     public String description;
-
+    public String method;
 
 
     private String key;
 
-    public DataClass(String amount, String title, String description, int category) {
+    public DataClass(String amount, String title, String description, int category, String Method) {
+    }
+
+    public String getMethod() {
+        return method;
+    }
+
+    public void setMethod(String method) {
+        method = method;
     }
 
     public String getKey() {
@@ -49,7 +57,7 @@ public class DataClass {
         this.amount = amount;
         this.description = description;
         this.category = category;
+        this.method = method;
     }
-
 }
 
