@@ -27,6 +27,7 @@ import java.util.Calendar;
 public class add_expense extends AppCompatActivity {
 
     private Spinner categorySpinner;
+    private Spinner paymentMethodSpinner;
     private Button submitButton;
     private EditText amountEditText;
     private EditText titleEditText;
@@ -38,27 +39,26 @@ public class add_expense extends AppCompatActivity {
         setContentView(R.layout.activity_add_expense);
 
         initViews();
-        setupSpinner();
+        setupCategorySpinner();
+        setupPaymentMethodSpinner();
         setupSubmitButton();
     }
 
     private void initViews() {
         categorySpinner = findViewById(R.id.spinnerCategory);
+        paymentMethodSpinner = findViewById(R.id.spinMethod);
         submitButton = findViewById(R.id.btnSubmit);
         amountEditText = findViewById(R.id.editTextAmount);
         titleEditText = findViewById(R.id.editExpenseName);
         descriptionEditText = findViewById(R.id.editDescription);
-
-
     }
 
-    private void setupSpinner() {
+    private void setupCategorySpinner() {
         ArrayList<String> categories = new ArrayList<>();
         categories.add("Select Category");
         categories.add("Food and Groceries");
         categories.add("Housing");
         categories.add("Transportation");
-        categories.add("com/example/expensetracker/Utilities");
         categories.add("Healthcare");
         categories.add("Personal Care");
         categories.add("Entertainment");
@@ -73,6 +73,21 @@ public class add_expense extends AppCompatActivity {
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, categories);
         adapter.setDropDownViewResource(android.R.layout.select_dialog_singlechoice);
         categorySpinner.setAdapter(adapter);
+    }
+
+    private void setupPaymentMethodSpinner() {
+        ArrayList<String> paymentMethods = new ArrayList<>();
+        paymentMethods.add("Select Payment Method");
+        paymentMethods.add("Cash");
+        paymentMethods.add("Credit Card");
+        paymentMethods.add("Debit Card");
+        paymentMethods.add("Bank Transfer");
+        paymentMethods.add("Mobile Payment");
+        paymentMethods.add("Other");
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, paymentMethods);
+        adapter.setDropDownViewResource(android.R.layout.select_dialog_singlechoice);
+        paymentMethodSpinner.setAdapter(adapter);
     }
 
     private void setupSubmitButton() {
@@ -98,12 +113,12 @@ public class add_expense extends AppCompatActivity {
         String amount = amountEditText.getText().toString();
         String description = descriptionEditText.getText().toString();
         String category = categorySpinner.getSelectedItem().toString();
-        DataClass dataClass = new DataClass(title, amount, description, category);
+        String paymentMethod = paymentMethodSpinner.getSelectedItem().toString();
+        DataClass dataClass = new DataClass(title, amount, description, category, paymentMethod);
 
         String currentDate = DateFormat.getDateTimeInstance().format(Calendar.getInstance().getTime());
 
-
-        FirebaseDatabase.getInstance().getReference("Expense Tracker").child    (currentDate)
+        FirebaseDatabase.getInstance().getReference("Expenses").child(currentDate)
                 .setValue(dataClass)
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
@@ -124,6 +139,7 @@ public class add_expense extends AppCompatActivity {
                     }
                 });
     }
+
     private void showToast(String message) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }

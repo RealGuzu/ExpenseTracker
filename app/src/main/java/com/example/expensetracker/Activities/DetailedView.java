@@ -5,23 +5,20 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 import androidx.viewpager2.widget.ViewPager2;
-
 import com.example.expensetracker.R;
 import com.example.expensetracker.Utilities.MyViewPager;
 import com.google.android.material.tabs.TabLayout;
+import com.google.firebase.database.DatabaseReference;
 
 public class DetailedView extends AppCompatActivity {
 
     TabLayout tabLayout;
     ViewPager2 viewPager2;
     MyViewPager myViewPager;
-
+    String key;
+    DatabaseReference databaseReference;
     Button btnBack;
 
     @Override

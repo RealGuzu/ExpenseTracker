@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         // Initialize Firebase Database
-        databaseReference = FirebaseDatabase.getInstance().getReference("Expense Tracker");
+        databaseReference = FirebaseDatabase.getInstance().getReference("Expenses");
 
         // Set up RecyclerView
         setupRecyclerView();
@@ -157,7 +157,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void deleteExpenseFromDatabase(String expenseKey) {
-        DatabaseReference expenseRef = FirebaseDatabase.getInstance().getReference("Expense Tracker").child(expenseKey);
+        DatabaseReference expenseRef = FirebaseDatabase.getInstance().getReference("Expenses").child(expenseKey);
         expenseRef.removeValue();
     }
 }

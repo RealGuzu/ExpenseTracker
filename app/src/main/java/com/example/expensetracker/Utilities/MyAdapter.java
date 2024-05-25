@@ -12,7 +12,7 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.expensetracker.Activities.DetailedView;
-import com.example.expensetracker.Activities.update_activity;
+//import com.example.expensetracker.Activities.update_activity;
 import com.example.expensetracker.R;
 
 import java.util.ArrayList;
